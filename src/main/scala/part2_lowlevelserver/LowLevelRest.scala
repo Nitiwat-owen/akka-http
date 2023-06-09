@@ -8,6 +8,7 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity, HttpMethods, HttpRequ
 import akka.stream.ActorMaterializer
 import akka.util.Timeout
 import part2_lowlevelserver.GuitarDB.{AddQuantity, CreateGuitar, FindAllGuitars, FindGuitar, FindGuitarsInStock, GuitarCreated}
+// step 1
 import spray.json._
 
 import scala.concurrent.Future
@@ -61,7 +62,9 @@ class GuitarDB extends Actor with ActorLogging {
   }
 }
 
+// step 2
 trait GuitarStoreJsonProtocol extends DefaultJsonProtocol {
+  // step 3
   implicit val guitarFormat = jsonFormat3(Guitar)
 }
 
